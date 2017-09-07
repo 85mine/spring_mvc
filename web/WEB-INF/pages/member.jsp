@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    This is USER page.
+    This is member page.
 </body>
 </html>

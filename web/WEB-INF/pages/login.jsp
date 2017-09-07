@@ -6,22 +6,22 @@
 <body>
 <h1>Login</h1>
 <h3>Enter user name and password:</h3>
-<form name='f' action="/login" method='POST'>
+<form:form action="/login" method="POST" commandName="loginForm">
     <table>
         <tr>
             <td>User:</td>
-            <td><input type='text' name='username' value=''></td>
+            <td><form:input path="username"/></td>
+            <td><form:errors path="username" cssStyle="color:red;display:block"></form:errors></td>
         </tr>
-        <form:errors path="login.username" cssStyle="color:red;display:block"></form:errors>
         <tr>
             <td>Password:</td>
-            <td><input type='password' name='password' /></td>
+            <td><form:password path="password"/></td>
+            <td><form:errors path="password" cssStyle="color:red;display:block"></form:errors></td>
         </tr>
-        <form:errors path="login.password" cssStyle="color:red;display:block"></form:errors>
         <tr>
-            <td><input name="submit" type="submit" value="submit" /></td>
+            <td><input name="submit" type="submit" value="submit"/></td>
         </tr>
     </table>
-</form>
+</form:form>
 </body>
 </html>

@@ -1,16 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Wellington
-  Date: 9/5/17
-  Time: 11:52 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-    This is ADMIN page.
+This is ADMIN page.
+<c:url var="logout" value="/logout"/>
+<form action="${logout}" method="post">
+    <input type="submit" value="Logout"/>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+</form>
 </body>
 </html>

@@ -12,14 +12,31 @@
         <security:intercept-url pattern="/member" access="hasRole('ROLE_MEMBER')"/>
         <security:intercept-url pattern="/member/**" access="hasRole('ROLE_MEMBER')"/>
         <security:remember-me key="remember-me"/>
+        <security:form-login
+                login-page="/login"
+                login-processing-url="/j_spring_security_check"
+                authentication-failure-url="/login?error=true"
+                default-target-url="/"
+                username-parameter="username"
+                password-parameter="password"/>
+        <security:logout logout-url="/logout" logout-success-url="/" invalidate-session="true"/>
+        <security:access-denied-handler ref="403"/>
     </security:http>
 
     <security:authentication-manager>
         <security:authentication-provider>
-            <security:user-service>
-                <security:user name="admin" password="123456" authorities="ROLE_ADMIN"/>
-                <security:user name="member" password="123456" authorities="ROLE_MEMBER"/>
-            </security:user-service>
+            <security:jdbc-user-service data-source-ref="datasource"
+                                        users-by-username-query="SELECT username,password, enabled FROM users WHERE username=?"
+                                        authorities-by-username-query="SELECT username,role FROM user_roles WHERE username=?"
+            />
+            <!--<security:user-service>-->
+            <!--<security:user name="admin" password="123456" authorities="ROLE_ADMIN"/>-->
+            <!--<security:user name="member" password="123456" authorities="ROLE_MEMBER"/>-->
+            <!--</security:user-service>-->
         </security:authentication-provider>
     </security:authentication-manager>
+
+    <bean id="403" class="com.spring.exceptions.AccessDenied">
+        <property name="errorPage" value="403"/>
+    </bean>
 </beans>

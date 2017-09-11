@@ -5,5 +5,8 @@
 </head>
 <body>
     This is home page.
+    <a href="/register/">Register</a>
+    <a href="/admin/">Admin</a>
+    <a href="/member/">Member</a>
 </body>
 </html>

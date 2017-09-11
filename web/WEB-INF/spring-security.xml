@@ -37,6 +37,6 @@
     </security:authentication-manager>
 
     <bean id="403" class="com.spring.exceptions.AccessDenied">
-        <property name="errorPage" value="403"/>
+        <property name="errorPage" value="/403"/>
     </bean>
 </beans>

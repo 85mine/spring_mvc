@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <html>
 <head>
@@ -6,14 +7,14 @@
     <title>Registration</title>
 </head>
 <body>
-<form:form id="regForm" modelAttribute="user" action="register" method="post">
+<form:form id="regForm" modelAttribute="user" action="/register" method="post">
     <table align="center">
         <tr>
             <td>
                 <form:label path="username">Username</form:label>
             </td>
             <td>
-                <form:input path="username" name="username" id="username" />
+                <form:input path="username" name="username" id="username"/>
             </td>
         </tr>
         <tr>
@@ -21,7 +22,7 @@
                 <form:label path="password">Password</form:label>
             </td>
             <td>
-                <form:password path="password" name="password" id="password" />
+                <form:password path="password" name="password" id="password"/>
             </td>
         </tr>
         <tr>
@@ -29,7 +30,7 @@
                 <form:label path="firstname">FirstName</form:label>
             </td>
             <td>
-                <form:input path="firstname" name="firstname" id="firstname" />
+                <form:input path="firstname" name="firstname" id="firstname"/>
             </td>
         </tr>
         <tr>
@@ -37,7 +38,7 @@
                 <form:label path="lastname">LastName</form:label>
             </td>
             <td>
-                <form:input path="lastname" name="lastname" id="lastname" />
+                <form:input path="lastname" name="lastname" id="lastname"/>
             </td>
         </tr>
         <tr>
@@ -45,7 +46,7 @@
                 <form:label path="email">Email</form:label>
             </td>
             <td>
-                <form:input path="email" name="email" id="email" />
+                <form:input path="email" name="email" id="email"/>
             </td>
         </tr>
         <tr>
@@ -53,7 +54,7 @@
                 <form:label path="address">Address</form:label>
             </td>
             <td>
-                <form:input path="address" name="address" id="address" />
+                <form:input path="address" name="address" id="address"/>
             </td>
         </tr>
         <tr>
@@ -61,7 +62,7 @@
                 <form:label path="phone">Phone</form:label>
             </td>
             <td>
-                <form:input path="phone" name="phone" id="phone" />
+                <form:input path="phone" name="phone" id="phone"/>
             </td>
         </tr>
         <tr>
